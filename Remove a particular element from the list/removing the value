@@ -1,0 +1,13 @@
+class Solution(object):
+    def removeElement(self, nums, val):
+        l = list(filter(lambda x: x != val, nums))
+        nums[:] = l
+        return len(nums)
+
+nums = [1, 2, 3, 2, 5, 6, 7]
+val = 2
+
+k = Solution().removeElement(nums, val)  # ✅ Single line
+
+print("k =", k)
+print("Updated nums =", nums)
