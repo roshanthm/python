@@ -1,0 +1,22 @@
+def remove_duplicates(nums):
+    if len(nums) <= 2:
+        return len(nums)
+
+    i = 2  
+
+    for j in range(2, len(nums)):
+        if nums[j] != nums[i - 2]:     # it changes the position of element
+            nums[i] = nums[j]
+            i += 1
+
+    return i
+
+
+nums = [1, 1, 1, 2, 2, 3]
+print("Original list:", nums)
+
+k = remove_duplicates(nums)
+
+print("After removing extra duplicates:")
+print("Length =", k)
+print("Modified list =", nums[:k])  
