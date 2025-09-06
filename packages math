@@ -1,0 +1,10 @@
+import math
+print(math.sqrt(16))
+
+from math import sqrt,pi
+print(sqrt(25))
+print(pi)
+
+#to take all libraries from math
+from math import *
+
