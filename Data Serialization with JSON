@@ -12,3 +12,7 @@ print(type(parsed_data))
 <class 'str'>
 {'name': 'Krish', 'age': 25}
 <class 'dict'>
+
+
+Data serialization, such as converting a dictionary into JSON, is important when working with APIs or databases.
+The json module provides dumps to convert a dictionary to a JSON string and loads to convert a JSON string back to a dictionary.
