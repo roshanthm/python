@@ -1,0 +1,26 @@
+~~Working with Arrays
+import array
+arr = array.array('i', [1, 2, 3, 4])
+print(arr)                                         //array('i', [1, 2, 3, 4])
+
+~~Mathematical Operations
+import math
+print(math.sqrt(16))
+print(math.pi)
+
+~~Generating Random Numbers
+import random
+print(random.randint(1, 10))
+fruits = ['apple', 'banana', 'cherry']
+print(random.choice(fruits))
+
+~~File and Directory Operations with OS Module
+import os
+print(os.getcwd())
+os.mkdir('test_dir')                                   //You can get the current working directory and create new directories using this module.
+
+~~High-Level File Operations with shutil
+import shutil
+shutil.copyfile('source.txt', 'destination.txt')
+
+
