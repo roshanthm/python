@@ -1,0 +1,9 @@
+import csv
+with open('example.csv', 'w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerow(['name', 'age'])
+    writer.writerow(['Krish', 32])
+with open('example.csv', 'r') as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)
