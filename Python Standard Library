@@ -24,3 +24,27 @@ import shutil
 shutil.copyfile('source.txt', 'destination.txt')
 
 
+
+~~Date and Time Operations
+from datetime import datetime, timedelta
+now = datetime.now()
+print(now)
+yesterday = now - timedelta(days=1)
+print(yesterday)
+
+
+~~Program Timing with Time Module
+import time
+print(time.time())
+time.sleep(2)
+print(time.time())
+
+
+~~~Regular Expressions with re Module
+import re
+pattern = r'\d+'
+text = 'There are 123 apples.'                           The re module is used for regular expressions, which help in matching specific patterns in text. 
+                                                         For example, you can search for digits in a string using a pattern.
+match = re.search(pattern, text)
+if match:
+    print(match.group())
