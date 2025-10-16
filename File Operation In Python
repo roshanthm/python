@@ -1,0 +1,66 @@
+Reading a Whole File
+with open('example.txt', 'r') as file:
+    content = file.read()
+
+Creating and Writing to a File
+with open('example.txt', 'w') as file:
+    file.write('Hello.\n')
+    file.write('How are you.\n')
+    file.write('I am good.\n')
+    file.write('Krish is my name.\n')
+    file.write('Welcome to the course.\n')
+
+Reading a File Line by Line
+with open('example.txt', 'r') as file:
+    for line in file:
+        print(line)
+
+
+When reading line by line, new line characters are included. To remove them, use the .strip() method.
+with open('example.txt', 'r') as file:
+    for line in file:
+        print(line.strip())
+
+
+Writing to a File and Overwriting
+with open('example.txt', 'w') as file:
+    file.write('Hello World\n')
+    file.write('This is a new line\n')
+
+Writing Multiple Lines to a File
+lines = ['This is my first line\n', 'Second line\n', 'Third line\n']
+with open('example.txt', 'a') as file:
+    file.writelines(lines)
+
+Working with Binary Files
+Binary files, such as those with a .bin extension, are handled using binary modes. To write to a binary file, use 'wb' mode. To read from a binary file, use 'rb' mode.
+with open('example.bin', 'wb') as file:
+    file.write(b'Hello world')
+
+with open('example.bin', 'rb') as file:
+    content = file.read()
+    print(content)
+
+Copying Content from One File to Another
+with open('example.txt', 'r') as source_file:
+    content = source_file.read()
+with open('destination.txt', 'w') as destination_file:
+    destination_file.write(content)
+
+Counting Lines, Words, and Characters in a File
+def count_file_stats(filename):
+    with open(filename, 'r') as file:
+        lines = file.readlines()
+        num_lines = len(lines)
+        num_words = sum(len(line.split()) for line in lines)
+        num_chars = sum(len(line) for line in lines)
+    return num_lines, num_words, num_chars
+
+
+Reading and Writing in the Same File Session
+with open('example.txt', 'w+') as file:
+    file.write('Hello world\n')
+    file.write('This is a new line\n')
+    file.seek(0)
+    content = file.read()
+    print(content)
